@@ -1,8 +1,9 @@
+const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const webpack = require('webpack')
 // require("font-awesome-webpack");
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: "./src/index.html",
+  template: "./public/index.html",
   filename: "./index.html"
 });
 const jqueryplugin=    new webpack.ProvidePlugin({
@@ -11,27 +12,30 @@ const jqueryplugin=    new webpack.ProvidePlugin({
   'window.jQuery': 'jquery',
 })
 module.exports = {
-  entry: { main: './src/index.js' },
+  entry: "./src/index.js",
+  output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "build"),
+  },
   module: {
+    // exclude node_modules
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,         // <-- added `|jsx` here
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        use: ["babel-loader"],
       },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
-      },
-      { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader" },
-      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader" },
-    ]
+    ],
+  },
+  // pass all js files through Babel
+  resolve: {
+    extensions: ["*", ".js", ".jsx"],    // <-- added `.jsx` here
   },
   plugins: [htmlPlugin,jqueryplugin],
   devServer: {
+    static: {
+      directory: path.join(__dirname, "build"),
+    },
     port: 3000,
-    historyApiFallback: true,
   }
 };

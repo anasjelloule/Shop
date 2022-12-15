@@ -1,39 +1,40 @@
 {
-  "name": "client_src",
+  "name": "react",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development ",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anasjelloule/react.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anasjelloule/react/issues"
+  },
+  "homepage": "https://github.com/anasjelloule/react#readme",
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.8.1",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "css-loader": "^2.1.1",
-    "html-webpack-plugin": "^3.2.0",
-    "style-loader": "^0.23.1",
-    "url-loader": "^1.1.2",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.2.1"
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@expo/webpack-config": "^0.17.3",
+    "babel-loader": "^9.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "@babel/core": "^7.4.0",
-    "axios": "^0.18.0",
-    "bootstrap": "^4.3.1",
-    "font-awesome": "^4.7.0",
-    "jquery": "^3.3.1",
-    "materialize-css": "^1.0.0-rc.2",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-router": "^5.0.0",
-    "react-router-dom": "^5.0.0"
+    "@types/react-router-dom": "^5.3.3",
+    "axios": "^1.2.1",
+    "jquery": "^3.6.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.5"
   }
 }
