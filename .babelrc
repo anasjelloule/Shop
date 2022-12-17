@@ -1,0 +1,12 @@
+// {
+//     "presets": ["env", "react","@babel/preset-react"]
+//   }
+{
+  "presets": [
+    "@babel/preset-env",
+    "next/babel",
+    ["@babel/preset-react", {
+    "runtime": "automatic"
+  }]
+  ]
+}
