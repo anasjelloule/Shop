@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const webpack = require('webpack')
+
 // require("font-awesome-webpack");
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./public/index.html",

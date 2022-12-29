@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Menu from "./Menu";
 import Navhref from "./Navhref";
-
+import { Cart } from "./Cart/Cart";
 const Header = () => {
   const [open, setOpen] = useState(false);
 
@@ -12,9 +12,9 @@ const Header = () => {
           <div className="row justify-content-between">
             <div className="col-md-8 order-md-last">
               <div className="row">
-                <div className="col-md-6 text-end">
-                  <Navhref passClass="navbar-brand">
-                    Logistica <span>Architecture Agency</span>
+                <div className="col-md-6 text-center">
+                  <Navhref passClass="navbar-brand" Link="/">
+                    Voltify <span>Digital Agency</span>
                   </Navhref>
                 </div>
                 <div className="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
@@ -37,7 +37,7 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-4 d-flex">
+            <div className="col-md-4 d-none d-md-flex">
               <div className="social-media">
                 <p className="mb-0 d-flex">
                   <Navhref passClass="d-flex align-items-center justify-content-center">
@@ -70,9 +70,9 @@ const Header = () => {
             </div>
           </div>
         </div>
-  
       </section>
       <Menu />
+      <Cart />
     </>
   );
 };

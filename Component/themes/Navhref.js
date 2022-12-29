@@ -6,7 +6,7 @@ const Navhref = (props) => {
   const [count, setCount] = useState(0);
   return (
     <>
-      <Link className={props.passClass} href={props.Link ?? "404"} >
+      <Link className={props.passClass} href={props.Link || "404"} >
         {props.children}
       </Link>
     </>
